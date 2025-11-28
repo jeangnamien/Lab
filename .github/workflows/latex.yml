@@ -3,7 +3,6 @@ permissions:
   contents: write
   packages: write
 
-
 on:
   push:
     tags:
@@ -23,14 +22,13 @@ jobs:
           root_file: card.tex
           compiler: xelatex
 
-
       - name: Create GitHub Release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
 
       - name: Upload PDF to Release
         uses: actions/upload-release-asset@v1
@@ -39,3 +37,5 @@ jobs:
           asset_path: ./card.pdf
           asset_name: card.pdf
           asset_content_type: application/pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
