@@ -1,4 +1,8 @@
 name: Build LaTeX document
+permissions:
+  contents: write
+  packages: write
+
 
 on:
   push:
