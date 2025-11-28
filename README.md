@@ -1,33 +1,40 @@
-(Credits to https://github.com/jilljenn/business-card)
+# Business Card Project
 
-# Business Card
+This repository contains my personal business card written in LaTeX, as part of the Git & GitHub practice assignment.  
+The project demonstrates the full Git workflow (branches, commits, merge, ignore files) as well as an automated LaTeX build and release system using GitHub Actions.
 
-In March 2014, I attended the 1st [Learning at Scale conference](http://learningatscale.acm.org/las2014/).  
-In the subway, some nice guy told me I **had to** make business cards for the conference. So I went to some [kinko](https://en.wikipedia.org/wiki/FedEx_Office) and asked:
+---
 
-- How much for 250 business cards?
-- $69.
-- If I provide a PDF and just ask you to print and cut, can you do it for today?
-- Yes.
-- How much?
-- $39. Do you have the file?
-- Yes.
+## 📇 Project Description
 
-It was a lie. I opened a new LaTeX document and typed this thing, thanks to Stack Overflow.
+The project is based on a LaTeX template for generating a business card.  
+I customized the template by adding my personal information and updating the logo.
 
-![Some business card in LaTeX](card.png)
+Git was used to:
 
-## Requirements
+- Initialize a local repository  
+- Track and commit source files  
+- Create and merge branches  
+- Ignore generated (compiled) files  
+- Configure GitHub Actions for automatic PDF release  
 
-- XeLaTeX
-- Gill Sans, but you can change the font
+---
 
-## Build
+## 🔧 Requirements
 
-    xelatex card
+To manually compile the card on your machine, you need:
 
-## License
+- **XeLaTeX** (preferred)  
+- Or **pdflatex** (if using machines without XeLaTeX)  
+- A working TeX distribution (TeX Live, MiKTeX, etc.)
 
-AGPLv3 because I like to force people to be free.
+If XeLaTeX fails, comment out the custom font lines in `card.tex`.
 
-© 2017 Jill-Jênn Vie
+---
+
+## 🧪 Manual Compilation
+
+To compile the business card locally:
+
+```bash
+xelatex card.tex
